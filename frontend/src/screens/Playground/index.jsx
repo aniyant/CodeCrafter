@@ -4,12 +4,13 @@ import InputConsole from './InputConsole'
 import OutputConsole from './OutputConsole'
 import Navbar from './Navbar'
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import { languageMap, PlaygroundContext } from '../../context/PlaygroundContext'
 import { ModalContext } from '../../context/ModalContext'
 import Modal from '../../components/Modal'
 import { Buffer } from 'buffer'
 import axios from 'axios'
+import { Console, Header, TextArea } from './InputConsole'
 const MainContainer = styled.div`
   display: grid;
   grid-template-columns: ${({ isFullScreen }) => isFullScreen ? '1fr' : '2fr 1fr'};
@@ -22,7 +23,7 @@ const MainContainer = styled.div`
 const Consoles = styled.div`
   display: grid;
   width: 100%;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr 1fr;
   grid-template-columns: 1fr;
 `
 
@@ -177,6 +178,43 @@ const Playground = () => {
           setIsFullScreen={setIsFullScreen}
         />
         <Consoles>
+          <Console>
+              <Header style={{background:"#ffffff"}}><div style={
+                {
+                  backgroundColor: ' #004aad', /* Green */
+                  border: 'none',
+                  color: 'white',
+                  padding: '16px 32px',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  display: 'inline-block',
+                  fontSize: '16px',
+                  margin: '4px 2px',
+                  transitionDuration: '0.4s',
+                  cursor: 'pointer',
+                  borderRadius: '25px',
+                }} onClick={()=>{<Navigate to='/'/>}}
+              >Home
+              </div>
+              <div style={
+                {
+                  backgroundColor: '#ff914c', /* Green */
+                  border: 'none',
+                  color: 'white',
+                  padding: '16px 32px',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  display: 'inline-block',
+                  fontSize: '16px',
+                  margin: '4px 2px',
+                  transitionDuration: '0.4s',
+                  cursor: 'pointer',
+                  borderRadius: '25px',
+                }}>
+                  Logout
+                  </div>
+              </Header>
+          </Console>
           <InputConsole
             currentInput={currentInput}
             setCurrentInput={setCurrentInput}
