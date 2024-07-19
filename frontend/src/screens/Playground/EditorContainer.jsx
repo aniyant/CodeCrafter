@@ -188,7 +188,7 @@ const EditorContainer = ({
               }
             })} />
           </Title>
-          <Button onClick={saveCode}>Save code</Button>
+          <Button onClick={saveCode} style={{background:"#004aad", color: "#fff"}} >Save code</Button>
         </Header>
         <SelectBars>
           <Select
@@ -224,7 +224,7 @@ const EditorContainer = ({
         <a href={`data:text/plain;charset=utf-8,${encodeURIComponent(currentCode)}`} download="code.txt">
           <BiExport /> Export Code
         </a>
-        <SaveAndRunButton onClick={runCode}>Run Code</SaveAndRunButton>
+        <SaveAndRunButton onClick={runCode} style={{background:"#004aad", color: "#fff"}} >Run Code</SaveAndRunButton>
       </LowerToolBar>
     </StyledEditorContainer >
   )

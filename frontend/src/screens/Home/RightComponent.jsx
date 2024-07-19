@@ -124,7 +124,7 @@ const RightComponent = () => {
     <StyledRightComponent>
       <Header>
         <Heading size="large">
-          My <span>Playground</span>
+         My Code <span>Craft</span>
         </Heading>
         <AddButton onClick={() => {localStorage.removeItem('user');navigate('/login')}}><span>Logout</span></AddButton>
       </Header>
@@ -153,7 +153,7 @@ const RightComponent = () => {
                     folderId: folderId,
                     cardId: "",
                   }
-                })}><span>+</span> New Playground</AddButton>
+                })}><span>+</span> New Craft</AddButton>
               </FolderIcons>
             </Header>
 
@@ -171,7 +171,7 @@ const RightComponent = () => {
                       </CardContent>
                     </CardContainer>
                     <FolderIcons onClick={(e) => {
-                      e.stopPropagation(); //stop click propagation from child to parent
+                      e.stopPropagation(); 
                     }}>
                       <IoTrashOutline onClick={() => deleteCard(folderId, playgroundId)} />
                       <BiEditAlt onClick={() => openModal({

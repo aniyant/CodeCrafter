@@ -73,8 +73,8 @@ const LeftComponent = () => {
         <StyledLeftComponent>
             <ContentContainer>
                 <Logo src={logo} alt="" />
-                <MainHeading> <span>Code</span> Deck</MainHeading>
-                <SubHeading>Code. Compile. Debug.</SubHeading>
+                <MainHeading> <span>Code</span> Crafter</MainHeading>
+                <SubHeading>Code. Craft. Debug.</SubHeading>
                 <AddNewButton onClick={() => openModal({
                     show: true,
                     modalType: 3,
@@ -82,7 +82,7 @@ const LeftComponent = () => {
                         folderId: "",
                         cardId: "",
                     }
-                })} ><span>+</span> Create New Playground</AddNewButton>
+                })} ><span>+</span> Create New Craft</AddNewButton>
             </ContentContainer>
         </StyledLeftComponent>
     )
