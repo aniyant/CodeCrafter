@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, reset } from '../../store/authSlice';
 import { Navigate, NavLink, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import Home from '../../screens/Home';
+import './loginPage.css';
+import LeftComponent from '../../screens/Home/LeftComponent';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -52,48 +53,56 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <section className="heading">
-        <h1>Login</h1>
-      </section>
-
-      <section className="form">
-        <form onSubmit={onSubmit}>
-          <div className="form-group">
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              name="email"
-              value={email}
-              placeholder="Enter your email"
-              onChange={onChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              name="password"
-              value={password}
-              placeholder="Enter your password"
-              onChange={onChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <div>
-              <p>Not a user yet <NavLink to='/signup'>register</NavLink></p>
-            </div>
-            <button type="submit" className="btn btn-block">
-              Submit
-            </button>
-          </div>
-        </form>
-      </section>
+    <div className="Container">
+    <div className='leftDiv'>
+    <LeftComponent />
     </div>
+    <div className='rightDiv'>
+      <div className="login-box">
+        <section className="heading">
+          <h1>Login</h1>
+        </section>
+
+        <section className="form">
+          <form onSubmit={onSubmit}>
+            <div className="form-group">
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                value={email}
+                placeholder="Enter your email"
+                onChange={onChange}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                name="password"
+                value={password}
+                placeholder="Enter your password"
+                onChange={onChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <button type="submit" className="btn btn-block">
+                Submit
+              </button>
+            </div>
+          </form>
+          <div className="register-link">
+            <p>Not a user yet? <NavLink to='/signup'>Register</NavLink></p>
+          </div>
+        </section>
+      </div>
+    </div>
+    </div>  
   );
+  
 };
 
 export default Login;
