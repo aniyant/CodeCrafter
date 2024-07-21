@@ -4,6 +4,9 @@
 ## Project Type
 ### Full-Stack
 
+## Intoduction
+- It was a collaborative effort taken by 2 team members Sunny Kumar, Sarvjyoti and it was completed in 5 days. The purpose of this project was to test our coding skills as well as our team-building skills.
+
 ## Deployed App
 ### Frontend : https://onlinecodecrafter.netlify.app/login
 ### Backend : https://judicial-javascript-038-dock.onrender.com/
